@@ -1,9 +1,9 @@
 pkgbase = linux-megi
-	pkgver = 6.11.5
+	pkgver = 6.12.8
 	pkgrel = 1
 	url = https://codeberg.org/megi/linux
 	arch = aarch64
-	license = GPL2
+	license = GPL-2.0-only
 	makedepends = xmlto
 	makedepends = docbook-xsl
 	makedepends = kmod
@@ -14,18 +14,20 @@ pkgbase = linux-megi
 	makedepends = python
 	makedepends = cpio
 	options = !strip
-	source = linux-orange-pi-6.11-20241029-1901.tar.gz::https://codeberg.org/megi/linux/archive/orange-pi-6.11-20241029-1901.tar.gz
+	source = linux-orange-pi-6.12-20250104-1626.tar.gz::https://codeberg.org/megi/linux/archive/orange-pi-6.12-20250104-1626.tar.gz
 	source = config
 	source = linux.preset
 	source = ZEN-Add-sysctl-and-CONFIG-to-disallow-unprivileged-C.patch
+	source = arch-Kconfig-Default-to-maximum-amount-of-ASLR-bits.patch
 	source = dts-pinephone-drop-modem-power-node.patch
 	source = dts-pinephone-pro-remove-modem-node.patch
 	source = dts-pinephone-pro-add-modem-ri.patch
 	source = Revert-arm64-allwinner-dts-a64-enable-K101-IM2BYL02.patch
-	md5sums = 00f4928a5bc7ece4bd8c6ece0c46d601
-	md5sums = 1fd7b913281d487753a14c07541d3049
+	md5sums = 71a5471fe4fc1616ea4faf5190603f4d
+	md5sums = 6fa33aefa670aabfaeba77cc07e6afef
 	md5sums = 86d4a35722b5410e3b29fc92dae15d4b
-	md5sums = 321e550e217dbed67ff38200285ade0a
+	md5sums = ce08cd7f8cfafc7103fc46121a7dc23c
+	md5sums = b1f742f1003356ac35527d2975d0f65a
 	md5sums = 571aee8d8a58c719288fee4185ab1713
 	md5sums = da2ad89730c2fce222ca0e286585a868
 	md5sums = 7d80f76f1647afa00de320f5866484a1
@@ -39,7 +41,7 @@ pkgname = linux-megi
 	depends = mkinitcpio>=0.7
 	optdepends = crda: to set the correct wireless channels of your country
 	provides = kernel26
-	provides = linux=6.11.5
+	provides = linux=6.12.8
 	provides = WIREGUARD-MODULE
 	conflicts = linux
 	replaces = linux-pine64
@@ -47,6 +49,6 @@ pkgname = linux-megi
 
 pkgname = linux-megi-headers
 	pkgdesc = Header files and scripts for building modules for linux kernel - Megous Kernel
-	provides = linux-headers=6.11.5
+	provides = linux-headers=6.12.8
 	conflicts = linux-headers
 	replaces = linux-pine64-headers
